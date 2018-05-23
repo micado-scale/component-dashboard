@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block page_header %}
+    Grafana
+    <small>(<a href="http://{{ frontend_ip }}:3000/d/micado" target="_blank">pop out</a>)</small>
+{% endblock %}
+
+{% block content %}
+        <div class="intrinsic-container">
+            <iframe src="http://{{ frontend_ip }}:3000/d/micado" allowfullscreen></iframe>
+        </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block page_header %}
+    Docker Visualizer
+    <small>(<a href="http://{{ frontend_ip }}:8080" target="_blank">pop out</a>)</small>
+{% endblock %}
+
+{% block content %}
+        <div class="intrinsic-container">
+            <iframe src="http://{{ frontend_ip }}:8080" allowfullscreen></iframe>
+        </div>
+{% endblock %}

@@ -1,5 +1,6 @@
 from logging.config import dictConfig
 from flask import Flask, redirect
+from flask_menu import Menu
 
 from .views.home import home
 
@@ -20,6 +21,7 @@ dictConfig({
 })
 
 app = Flask(__name__)
+Menu(app=app)
 
 def init_application(app, config):
     app.config.from_object(config)

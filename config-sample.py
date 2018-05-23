@@ -19,6 +19,7 @@ class BaseConfiguration(object):
     APP_PORT = 5000
     # Application host/ IP address
     APP_HOST = "0.0.0.0"
+    FRONTEND_IP = "192.168.154.95"
 
 
 class DebugConfiguration(BaseConfiguration):
