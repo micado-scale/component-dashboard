@@ -1,0 +1,9 @@
+.Python
+bin/
+include/
+lib/
+*.pyc
+*.swp
+.idea
+config.py
+.DS_Store
