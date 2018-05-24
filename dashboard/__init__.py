@@ -1,3 +1,5 @@
+import os
+
 from logging.config import dictConfig
 from flask import Flask, redirect
 from flask_menu import Menu
@@ -23,7 +25,13 @@ dictConfig({
 app = Flask(__name__)
 Menu(app=app)
 
-def init_application(app, config):
-    app.config.from_object(config)
+def init_application(app):
+    app.config["TESTING"] = False
+    app.config["DEBUG"] =  False
+    app.config["FRONTEND_IP"] = os.getenv(
+        'MICADO_FRONTEND_IP', '127.0.0.1')
     app.register_blueprint(home)
-    app.logger.info("{} application initialized".format(__name__))
+    app.logger.info("{} application initialized using frontend IP {}" \
+        .format(__name__, app.config["FRONTEND_IP"]))
+
+init_application(app)

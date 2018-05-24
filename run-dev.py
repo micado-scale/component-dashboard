@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 from dashboard import app, init_application
-from config import DebugConfiguration as config
 
 if __name__ == "__main__":
-    init_application(app, config)
-    app.debug = config.DEBUG
-    app.run(host=config.APP_HOST, port=config.APP_PORT, threaded=True)
+    init_application(app)
+    app.debug = True
+    app.testing = True
+    app.run(host="0.0.0.0", port="4000", threaded=True)
+
