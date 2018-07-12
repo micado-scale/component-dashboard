@@ -37,3 +37,7 @@ def home_alertmanager():
     return render_template("alertmanager.html",
         frontend_ip=current_app.config["FRONTEND_IP"])
 
+@home.route("/logout")
+@register_menu(home, '.logout', "Log out", order=0)
+def home_logout():
+    return "Logging you out"
