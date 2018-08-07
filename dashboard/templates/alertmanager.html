@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block page_header %}
+    Alert Manager
+    <small>(<a href="https://{{ frontend_ip }}/alertmanager" target="_blank">pop out</a>)</small>
+{% endblock %}
+
+{% block content %}
+        <div class="intrinsic-container">
+            <iframe src="https://{{ frontend_ip }}/alertmanager" allowfullscreen></iframe>
+        </div>
+{% endblock %}
