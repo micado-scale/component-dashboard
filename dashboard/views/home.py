@@ -30,13 +30,6 @@ def home_docker_visualizer():
         frontend_ip=current_app.config["FRONTEND_IP"])
 
 
-@home.route("/alertmanager")
-@home.route("/dashboard/alertmanager")
-@register_menu(home, '.alertmanager', "Alert Manager", order=0)
-def home_alertmanager():
-    return render_template("alertmanager.html",
-        frontend_ip=current_app.config["FRONTEND_IP"])
-
 @home.route("/logout")
 @register_menu(home, '.logout', "Log out", order=0)
 def home_logout():
