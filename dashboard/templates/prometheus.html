@@ -2,11 +2,11 @@
 
 {% block page_header %}
     Prometheus
-    <small>(<a href="https://{{ frontend_ip }}/prometheus" target="_blank">pop out</a>)</small>
+    <small>(<a href="https://{{ request.host }}/prometheus" target="_blank">pop out</a>)</small>
 {% endblock %}
 
 {% block content %}
         <div class="intrinsic-container">
-            <iframe src="https://{{ frontend_ip }}/prometheus" allowfullscreen></iframe>
+            <iframe src="https://{{ request.host }}/prometheus" allowfullscreen></iframe>
         </div>
 {% endblock %}
