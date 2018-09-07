@@ -2,11 +2,11 @@
 
 {% block page_header %}
     Docker Visualizer
-    <small>(<a href="https://{{ frontend_ip }}/docker-visualizer" target="_blank">pop out</a>)</small>
+    <small>(<a href="https://{{ request.host }}/docker-visualizer" target="_blank">pop out</a>)</small>
 {% endblock %}
 
 {% block content %}
         <div class="intrinsic-container">
-            <iframe src="https://{{ frontend_ip }}/docker-visualizer" allowfullscreen></iframe>
+            <iframe src="https://{{ request.host }}/docker-visualizer" allowfullscreen></iframe>
         </div>
 {% endblock %}
