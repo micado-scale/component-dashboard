@@ -2,7 +2,7 @@ FROM python:2.7-slim
 
 ENV MICADO_FRONTEND_IP 127.0.0.1
 
-ARG GIT_BRANCH=master
+ARG GIT_BRANCH=k8s
 ARG GIT_USER=micado-scale
 ARG GIT_REPO=component-dashboard
 ARG GIT_EXPORT_DIR=/srv/micado-dashboard
