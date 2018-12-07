@@ -31,6 +31,6 @@ def home_docker_visualizer():
 
 
 @home.route("/logout")
-@register_menu(home, '.logout', "Log out", order=0)
+@register_menu(home, '.logout', "Log out", order=1)
 def home_logout():
     return "Logging you out"
