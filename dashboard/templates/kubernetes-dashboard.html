@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block page_header %}
+    Kubernetes Dashboard
+    <small>(<a href="https://{{ request.host }}/kubernetes/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank">pop out</a>)</small>
+{% endblock %}
+
+{% block content %}
+        <div class="intrinsic-container">
+            <iframe src="https://{{ request.host }}/kubernetes/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" allowfullscreen></iframe>
+        </div>
+{% endblock %}
