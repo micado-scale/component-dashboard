@@ -22,11 +22,11 @@ def home_grafana():
         frontend_ip=current_app.config["FRONTEND_IP"])
 
 
-@home.route("/docker-visualizer")
-@home.route("/dashboard/docker-visualizer")
-@register_menu(home, '.docker-visualizer', "Docker Visualizer", order=0)
+@home.route("/kubernetes")
+@home.route("/dashboard/kubernetes")
+@register_menu(home, '.kubernetes-dashboard', "Kubernetes Dashboard", order=0)
 def home_docker_visualizer():
-    return render_template("docker-visualizer.html",
+    return render_template("kubernetes-dashboard.html",
         frontend_ip=current_app.config["FRONTEND_IP"])
 
 
