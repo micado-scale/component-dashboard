@@ -2,11 +2,11 @@
 
 {% block page_header %}
     Kubernetes Dashboard
-    <small>(<a href="https://{{ request.host }}/kubernetes/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank">pop out</a>)</small>
+    <small>(<a href="https://{{ request.host }}/kubernetes/" target="_blank">pop out</a>)</small>
 {% endblock %}
 
 {% block content %}
         <div class="intrinsic-container">
-            <iframe src="https://{{ request.host }}/kubernetes/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" allowfullscreen></iframe>
+            <iframe src="https://{{ request.host }}/kubernetes/" allowfullscreen></iframe>
         </div>
 {% endblock %}
