@@ -30,6 +30,8 @@ def init_application(app):
     app.config["DEBUG"] =  False
     app.config["FRONTEND_IP"] = os.getenv(
         'MICADO_FRONTEND_IP', '127.0.0.1')
+    app.config["MICADO_VERSION"] = os.getenv(
+        'MICADO_VERSION', '------')
     app.register_blueprint(home)
     app.logger.info("{} application initialized using frontend IP {}" \
         .format(__name__, app.config["FRONTEND_IP"]))
