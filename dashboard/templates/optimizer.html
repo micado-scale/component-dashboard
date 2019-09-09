@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block page_header %}
-    Optimizer Dashboard
-    <small>(<a href="https://{{ request.host }}/optimizer/" target="_blank">pop out</a>)</small>
+    Optimizer
+    <small>(<a href="https://{{ request.host }}/optimizer/report" target="_blank">pop out</a>)</small>
 {% endblock %}
 
 {% block content %}
         <div class="intrinsic-container">
-            <iframe src="https://{{ request.host }}/optimizer/" allowfullscreen></iframe>
+            <iframe src="https://{{ request.host }}/optimizer/report" allowfullscreen></iframe>
         </div>
 {% endblock %}
