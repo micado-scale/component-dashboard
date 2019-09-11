@@ -88,8 +88,13 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
         {%- for item in current_menu.children recursive -%}
-                    <li{% if item.active %} class="active"{% endif %}>
-                    <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>
+        {% if disable_optimizer in ['True', 'true'] and item.text=="Optimizer" %}
+          <li class="hide">
+          <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>
+        {% else %}
+          <li{% if item.active %} class="active"{% endif %}>
+          <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>
+        {%- endif-%}
         {%- endfor -%}
 
         <!--
