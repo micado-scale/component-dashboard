@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="occopus">
+    <h1>Nodes</h1>
+    <ul>
+        {% for key in nodes %}
+            <h2>{{ key }}</h2> 
+            {% for instance in nodes[key].instances %}
+	        <li style="font-size:large;margin-left:5em;">{{ nodes[key]["instances"][instance]["resource_address"] }}  |  {{ nodes[key]["instances"][instance]["state"] }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

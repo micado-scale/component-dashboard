@@ -91,6 +91,9 @@ desired effect
         {% if disable_optimizer in ['True', 'true'] and item.text=="Optimizer" %}
           <li class="hide">
           <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>
+        {% elif enable_occopus in ['False', 'false'] and item.text=="Nodes" %}
+          <li class="hide">
+          <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>
         {% else %}
           <li{% if item.active %} class="active"{% endif %}>
           <a href="{{ item.url}}"><i class="fa fa-link"></i> <span>{{ item.text }}</span></a></li>

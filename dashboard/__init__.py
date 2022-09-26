@@ -34,6 +34,8 @@ def init_application(app):
         'MICADO_VERSION', '------')
     app.config["DISABLE_OPTIMIZER"] = os.getenv(
         'DISABLE_OPTIMIZER', 'FALSE')
+    app.config["ENABLE_OCCOPUS"] = os.getenv(
+        'ENABLE_OCCOPUS', 'FALSE')
     app.register_blueprint(home)
     app.logger.info("{} application initialized using frontend IP {}" \
         .format(__name__, app.config["FRONTEND_IP"]))
