@@ -1,3 +1,5 @@
+import requests
+
 from flask import Blueprint, render_template, current_app
 from flask_menu import register_menu
 
@@ -41,6 +43,10 @@ def home_optimizer():
 def home_nodes():
     url = "http://occopus:5000/infrastructures/micado_worker_infra"
     resp = requests.get(url).json()
+    
+    if not resp or resp.get("status_code", 200) != 200:
+        resp = {"No nodes available.": ""}
+
     return render_template(['workers.html','base.html'], nodes = resp,
         frontend_ip=current_app.config['FRONTEND_IP'], version=current_app.config['MICADO_VERSION'], disable_optimizer=current_app.config['DISABLE_OPTIMIZER'], enable_occopus=current_app.config['ENABLE_OCCOPUS'])
 
